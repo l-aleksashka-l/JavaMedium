@@ -1,13 +1,13 @@
 package com.example.ProjectTest;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-@SpringBootApplication
-public class ProjectTestApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectTestApplication.class, args);
-	}
 
+		WebDriver driver = new FirefoxDriver();
+
+	}
 }

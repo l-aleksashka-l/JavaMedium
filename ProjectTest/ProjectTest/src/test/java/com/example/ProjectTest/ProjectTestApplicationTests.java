@@ -1,13 +1,14 @@
 package com.example.ProjectTest;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-@SpringBootTest
-class ProjectTestApplicationTests {
+public class Main {
 
-	@Test
-	void contextLoads() {
+	public static void main(String[] args) {
+
+		WebDriver driver = new FirefoxDriver();
+        // dhvskjbdkjn
+
 	}
-
 }
