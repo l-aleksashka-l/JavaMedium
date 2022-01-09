@@ -7,7 +7,9 @@
 </head>
 <body>
 <header th:insert="blocks/Header :: header"/>
-<div th:insert="Blocks/main.html :: main"/>
+<div class="container mt-5">
+    <h1 th:text="${title}"/>
+</div>
 <div th:insert="Blocks/Footer.html :: footer"/>
 
 </body>
