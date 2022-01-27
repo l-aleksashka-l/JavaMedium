@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Message {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id =0;
+    private Integer id ;
     private String name;
     private double price;
 

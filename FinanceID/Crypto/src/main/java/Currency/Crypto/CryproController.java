@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -23,10 +24,10 @@ class CryptoController {
         return "crypto_main";
     }
 
-    @GetMapping("/main")
+    @GetMapping
     public String main(Map<String, Object> model){
         Iterable<Message> messages = messageRepository.findAll();
-        model.put("messages", "HILE");
+        model.put("messages", messages);
         return "main_block";
     }
     @PostMapping
@@ -34,6 +35,15 @@ class CryptoController {
         Message message = new Message(name, price);
         messageRepository.save(message);
         Iterable<Message> messages = messageRepository.findAll();
+        model.put("messages", messages);
+        return "main_block";
+    }
+    @PostMapping("filter")
+    public String filter(@RequestParam String filter, Map<String, Object> model){
+        Iterable<Message> messages;
+        if(filter != null && !filter.isEmpty())
+        messages = messageRepository.findByName(filter);
+        else messages = messageRepository.findAll();
         model.put("messages", messages);
         return "main_block";
     }
